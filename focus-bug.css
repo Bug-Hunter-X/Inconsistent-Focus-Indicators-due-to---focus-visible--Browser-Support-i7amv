@@ -1,0 +1,1 @@
+The CSS rule `:focus-visible` is not supported in some older browsers, causing the focus indicator to be displayed inconsistently across different browsers and devices. This inconsistency can be a source of accessibility issues as it may prevent users with certain disabilities from clearly identifying the focused element.
