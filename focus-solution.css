@@ -1,0 +1,40 @@
+/* focus-solution.css */
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #007bff; /* fallback styles for all browsers */
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px #007bff; /* enhanced styles for modern browsers */
+}
+
+/* JavaScript fallback (optional, for older browsers) */
+
+function checkFocusMethod(element) {
+  if (document.activeElement === element) {
+      // If it's focused with keyboard
+      element.classList.add('focused-with-keyboard'); 
+  }
+  else {
+      // If it's not focused with keyboard, remove the class
+      element.classList.remove('focused-with-keyboard'); 
+  }
+}
+
+//This script can be included in your html file
+
+document.addEventListener('focusin', function(event){
+  checkFocusMethod(event.target);
+});
+
+document.addEventListener('focusout', function(event){
+  checkFocusMethod(event.target);
+});
+
+/* In your css, use the 'focused-with-keyboard' class to target element with keyboard focus */
+
+.focused-with-keyboard {
+  box-shadow: 0 0 0 4px #007bff !important;
+}
